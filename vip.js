@@ -53,7 +53,7 @@ function init_view(view)
 		if (gadgets.views.getParams()["content"] == "settings")
 		{
 			gadgets.window.setTitle("ViP : Settings");
-			document.write("<p>http://groups.google.com/group/visual-planner-discuss</p>");
+			document.write('<p><a href="http://groups.google.com/group/visual-planner-discuss"/></p>');
 			return;
 		}
 
