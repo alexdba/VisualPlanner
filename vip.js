@@ -53,7 +53,6 @@ function init_view(view)
 		if (gadgets.views.getParams()["content"] == "settings")
 		{
 			gadgets.window.setTitle("ViP : Settings");
-			document.write('<p><a href="http://groups.google.com/group/visual-planner-discuss">discussion group</a></p>');
 			return;
 		}
 
@@ -117,12 +116,14 @@ function create_multi_col_view()
 	var col_id=0;
 	while (dt_month.getTime() < dt_end.getTime())
 	{
-		var mth = create_div(xpos, 0);
-		mth.style.width = CELLWIDTH;
-		mth.style.fontSize = FONTSIZE;
-		mth.style.textAlign = "center";
-		mth.style.color = CLR_TEXT;
-		mth.style.cursor = "default";
+    var mth = create_div(xpos, 0);
+    mth.vipMonthHeader = {year:dt_month.getFullYear(), month:dt_month.getMonth()+1};
+    mth.setAttribute('onclick', "onclick_month_header(event);");
+    mth.style.width = CELLWIDTH;
+    mth.style.fontSize = FONTSIZE;
+    mth.style.textAlign = "center";
+    mth.style.color = CLR_TEXT;
+    mth.style.cursor = "pointer";
 
 		var dt_array = dt_month.toDateString().split(' ');
 		var str = fmt("^  ^", dt_array[1], dt_array[3]);
@@ -448,6 +449,18 @@ function onclick_day_number(event)
 
 	if (cell.vipCell)
 		google.calendar.showDate(cell.vipCell.year, cell.vipCell.month, cell.vipCell.day);
+}
+
+function onclick_month_header(event)
+{
+    var cell = event.target;
+
+    if (cell.vipMonthHeader)
+    {
+        var date_str = fmt((cell.vipMonthHeader.month < 10) ? "^0^01" : "^^01", cell.vipMonthHeader.year, cell.vipMonthHeader.month);
+        var url = fmt("https://www.google.com/calendar/render?date=^&mode=month", date_str);
+        window.top.location.replace(url);
+    }
 }
 
 function onmousedown(event)
