@@ -372,7 +372,7 @@ function draw_all_day_event(event)
 				var bar = create_div(1, 0);  // create colour bar
 				bar.style.width = 3;
 				bar.style.height = "100%";
-				bar.style.backgroundColor = event.color;
+				bar.style.backgroundColor = event.palette.medium;
 
 				all.appendChild(bar);
 				lyr.appendChild(all);
@@ -418,7 +418,7 @@ function draw_timed_event(event)
 	tmd.style.height = EVENTSIZE;
 	tmd.style.width = EVENTSIZE;
 	tmd.style.cursor = "default";
-	tmd.style.backgroundColor = event.color;
+	tmd.style.backgroundColor = event.palette.medium;
 	var fmtstr = fmt("^:^ ^", (event.startTime.hour < 10) ? "0^" : "^", (event.startTime.minute < 10) ? "0^" : "^", "^");
 	tmd.setAttribute("title", fmt(fmtstr, event.startTime.hour, event.startTime.minute, event.title));  // tooltip
 	tmd.vipTimedEvent = {cell:evt_cell, timestamp:evt_timestamp};
