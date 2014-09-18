@@ -117,7 +117,7 @@ function create_multi_col_view()
 
 	var dt_month = new Date(TODAY);
 	dt_month.setDate(1);  // 1st of this month
-	dt_month.setMonth(dt_month.getMonth()-2);  // offset
+	dt_month.setMonth(0);  // start of the year
 
 	var dt_end = new Date(dt_month);
 	dt_end.setMonth(dt_end.getMonth()+12);
