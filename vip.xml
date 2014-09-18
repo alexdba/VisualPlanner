@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-<ModulePrefs title="ViPx" description="Visual Planner for Google Calendar" author="T. Melo Rego">
+<ModulePrefs title="ViPx" description="Visual Planner Xincha" author="T. Melo Rego">
 <Require feature="google.calendar-0.5.read"/>
 <Require feature="views"/>
 <Require feature="settitle"/>
