@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-<ModulePrefs title="ViP" description="Visual Planner for Google Calendar" author="Chris Thompson">
+<ModulePrefs title="ViPx" description="Visual Planner for Google Calendar" author="T. Melo Rego">
 <Require feature="google.calendar-0.5.read"/>
 <Require feature="views"/>
 <Require feature="settitle"/>
@@ -16,14 +16,14 @@
 <button type="button" title="Settings" onclick="gadgets.views.requestNavigateTo('canvas', {content : 'settings'});"><b>*</b></button>
 </center>
 <div id="vip"></div>
-<script type="text/javascript" src="https://visual-planner.googlecode.com/svn/vip.js"></script>
+<script type="text/javascript" src="https://raw.githubusercontent.com/alexdba/VisualPlanner/master/vip.js"></script>
 <script type="text/javascript">gadgets.util.registerOnLoadHandler(init_view("panel"));</script>
 ]]>
 </Content>
 <Content type="html" view="canvas">
 <![CDATA[
 <div id="vip"></div>
-<script type="text/javascript" src="https://visual-planner.googlecode.com/svn/vip.js"></script>
+<script type="text/javascript" src="https://raw.githubusercontent.com/alexdba/VisualPlanner/master/vip.js"></script>
 <script type="text/javascript">gadgets.util.registerOnLoadHandler(init_view("canvas"));</script>
 ]]>
 </Content>
