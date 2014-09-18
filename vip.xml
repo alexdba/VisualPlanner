@@ -11,7 +11,7 @@
 <Content type="html">
 <![CDATA[
 <center>
-<button type="button" title="Multi-column View" onclick="javascript:var ano=prompt("xulaps", (new Date()).getYear()+1900); gadgets.views.requestNavigateTo('canvas', {content : 'multi_col', year: ano});"><b>||||</b></button>
+<button type="button" title="Multi-column View" onclick="gadgets.views.requestNavigateTo('canvas', {content : 'multi_col', year: prompt("Entre com o Ano:", (new Date()).getYear()+1900)});"><b>||||</b></button>
 <button type="button" title="Single-column View" onclick="toggle_single_col();"><b>|</b></button>
 <button type="button" title="Settings" onclick="gadgets.views.requestNavigateTo('canvas', {content : 'settings'});"><b>*</b></button>
 </center>
